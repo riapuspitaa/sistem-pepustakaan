@@ -35,7 +35,12 @@
                                             <form action="{{ route ('buku.hapus', $b->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                            <button class = "btn btn-danger">Hapus</button>
+                                            <button class = "btn btn-danger">
+                                            <i class="fas fa-fw fa-trash"></i>
+                                            </button>
+                                            <a class="btn btn-primary" href="{{ route('buku.edit', $b->id) }}">
+                                    <i class="fa fa-pen"></i>
+                                    </a>
                                         </td>
                                     </tr>
                                 @empty

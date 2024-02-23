@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-fw fa-solid fa-school"></i>
                 </div>
-                <div class="sidebar-brand-text mx-1">Welcome!! VR Library</div>
+                <div class="sidebar-brand-text mx-1">Welcome to VR Library</div>
             </a>
 
             <!-- Divider -->
@@ -44,7 +44,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <!--i class="fas fa-fw fa-tachometer-alt"></i-->
                     <span>Enjoy Your Reading</span></a>
             </li>
 
