@@ -24,6 +24,11 @@
                             </div>
 
                             <div class="mb-4">
+                                <label for="foto" class="black text-sm font- medium text-gray-700">Foto Buku:</label>
+                                <input type="file" name="foto" accept="image/*" class="mt-1 p-2 border border-gray-300 rounded-md" required>
+                            </div>
+
+                            <div class="mb-4">
                                 <label for="pengarang" class="form-label">Penulis:</label>
                                 <input type="text" name="penulis" class="form-control" required>
                             </div>
