@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/buku/tambah', [BukuController::class, 'create'])->name('buku.create');
     Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
     Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
-    Route::patch('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
+    Route::put('/buku/update/{id}',[BukuController::class, 'update'])->name('buku.update');
+    Route::get('/buku/detail/{id}', [BukuController::class, 'show'])->name('buku.show');
     Route::delete('/buku/hapus/{id}', [BukuController::class, 'hapus'])->name('buku.hapus');
     //peminjaman
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');

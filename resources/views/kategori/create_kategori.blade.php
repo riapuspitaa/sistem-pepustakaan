@@ -14,6 +14,7 @@
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
 
+                        
                         <form action="{{ route('kategori.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 

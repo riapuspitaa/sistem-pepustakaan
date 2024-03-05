@@ -42,6 +42,7 @@
                                             <button class = "btn btn-danger">
                                             <i class="fas fa-fw fa-trash"></i>
                                             </button>
+                                        </form>
                                             <a class="btn btn-primary" href="{{ route('buku.edit', $b->id) }}">
                                             <i class="fa fa-pen"></i>
                                             </a>
