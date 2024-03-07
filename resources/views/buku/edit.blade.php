@@ -18,6 +18,10 @@
                         <form action="{{ route('buku.update', $buku->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                              @method('PUT')
+                             <div class="mb-3">
+                                <label for="foto" class="form-label">Foto Buku:</label>
+                                <input type="file" name="foto" accept="image/*" class="form-control">
+                            </div>
 
                             <div class="mb-3">
                                 <label for="judul" class="form-label">Judul:</label>
@@ -54,10 +58,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                           
+
                             <div class="mb-3">
-                                <label for="foto" class="form-label">Foto Buku:</label>
-                                <input type="file" name="foto" accept="image/*" class="form-control">
+                                <label for="sinopsis" class="form-label">Sinopsis:</label>
+                                <input type="text" name="sinopsis" class="form-control" value="{{ $buku->sinopsis }}" required>
                             </div>
 
                             <div class="d-grid">

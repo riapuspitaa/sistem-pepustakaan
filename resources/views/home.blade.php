@@ -12,8 +12,8 @@
                 $totalPeminjam = \App\Models\Peminjaman::count();
                 $totalUser = \App\Models\User::count();
                 @endphp 
-
-               <div class="row">
+        @role('admin')
+        <div class="row">
             <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100">
                     <div class="card-body">
@@ -63,6 +63,7 @@
                 </div>
             </div>
         </div>
+        @endrole
         <div class="card border-0 shadow-lg rounded-lg">
             <div class="card-body">
                 <div class="text-gray-900">

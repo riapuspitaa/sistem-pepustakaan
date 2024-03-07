@@ -21,12 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BukuController::class, 'welcome']);
   
 Auth::routes();
-
-Route::middleware('auth')->group(function () {
+Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::middleware('auth', 'role:admin')->group(function () {
     //Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     //Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     //Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
     //kategori
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
     Route::get('/kategori/tambah', [KategoriController::class,'create'])->name('kategori.create');
@@ -49,5 +48,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     //generate report
     Route::get('/report',[PeminjamanController::class, 'print'])->name('print');
+    Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user');
 });
+//user
+Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user')
+->middleware(['auth', 'role:user']);
 
