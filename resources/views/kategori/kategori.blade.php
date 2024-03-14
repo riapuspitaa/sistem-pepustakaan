@@ -5,20 +5,21 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <h5 class="card-header"><font color="black">List Kategori</font></h5>
+
+                    <div class="card-body">
                         <div class="mb-4">
                             <a href="{{route('kategori.create')}}" class="btn btn-primary">
                                 + Tambah Data Kategori
                             </a>
-                        </div>
                     </div>
 
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th class="px-4 py-2">Nama Kategori</th>
-                                    <th class="px-4 py-2">Aksi</th>
+                                <tr align="center">
+                                    <th class="px-4 py-2"><font color="black">Nama Kategori</font></th>
+                                    <th class="px-4 py-2"><font color="black">Aksi</font></th>
                                 </tr>
                             </thead>
                             <tbody>

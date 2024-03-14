@@ -45,7 +45,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('home')}}">
                     <!--i class="fas fa-fw fa-tachometer-alt"></i-->
-                    <span>Enjoy Your Reading~!!</span></a>
+                    <span>Dashboard</span></a>
+                    <hr class="sidebar-divider my-0">
             </li>
 
             @role('admin')

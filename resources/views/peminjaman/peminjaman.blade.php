@@ -5,8 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
+                    <h5 class="card-header"><font color="black">Data Peminjaman</font></h5>
+
                     <div class="card-body bg-white">
-                        <h1 class="h3 font-weight-bold mb-4">Data Peminjaman</h1>
                         @if(session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}
@@ -23,13 +24,13 @@
 
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th class="px-4 py-2">Nama Peminjam</th>
-                                    <th class="px-4 py-2">Buku yang Dipinjam</th>
-                                    <th class="px-4 py-2">Tanggal Peminjaman</th>
-                                    <th class="px-4 py-2">Tanggal Pengembalian</th>
-                                    <th class="px-4 py-2">Status</th>
-                                    <th class="px-4 py-2">Aksi</th>
+                                <tr align="center">
+                                    <th class="px-4 py-2"><font color="black">Nama Peminjam</font></th>
+                                    <th class="px-4 py-2"><font color="black">Buku yang Dipinjam</font></th>
+                                    <th class="px-4 py-2"><font color="black">Tanggal Peminjaman</font></th>
+                                    <th class="px-4 py-2"><font color="black">Tanggal Pengembalian</font></th>
+                                    <th class="px-4 py-2"><font color="black">Status</font></th>
+                                    <th class="px-4 py-2"><font color="black">Aksi</font></th>
                                 </tr>
                             </thead>
                             <tbody>
