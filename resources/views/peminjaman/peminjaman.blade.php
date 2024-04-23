@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container py-4">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -19,18 +19,18 @@
                                 + Tambah Data Peminjaman
                             </a>
                             <a href="{{ route ('print') }}" class="btn btn-primary">
-                                <i class="fa fa-download"></i>Ekspor PDF</a>
+                                <i class="ti ti-download"></i>Ekspor PDF</a>
                         </div>
 
                         <table class="table table-bordered">
                             <thead>
-                                <tr align="center">
-                                    <th class="px-4 py-2"><font color="black">Nama Peminjam</font></th>
-                                    <th class="px-4 py-2"><font color="black">Buku yang Dipinjam</font></th>
-                                    <th class="px-4 py-2"><font color="black">Tanggal Peminjaman</font></th>
-                                    <th class="px-4 py-2"><font color="black">Tanggal Pengembalian</font></th>
-                                    <th class="px-4 py-2"><font color="black">Status</font></th>
-                                    <th class="px-4 py-2"><font color="black">Aksi</font></th>
+                               <tr align="center" bgcolor="cadetblue">
+                                    <th class="px-4 py-2"><font color="white">Nama Peminjam</font></th>
+                                    <th class="px-4 py-2"><font color="white">Buku yang Dipinjam</font></th>
+                                    <th class="px-4 py-2"><font color="white">Tanggal Peminjaman</font></th>
+                                    <th class="px-4 py-2"><font color="white">Tanggal Pengembalian</font></th>
+                                    <th class="px-4 py-2"><font color="white">Status</font></th>
+                                    <th class="px-4 py-2"><font color="white">Aksi</font></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,14 +40,29 @@
                                         <td class="px-4 py-2">{{ $p->buku->judul }}</td>
                                         <td class="px-4 py-2">{{ $p->tanggal_peminjaman }}</td>
                                         <td class="px-4 py-2">{{ $p->tanggal_pengembalian }}</td>
-                                        <td class="px-4 py-2">{{ $p->status }}</td>
+                                       
+
+                                        <td class="px-4 py-2">
+                                            @if($p->status === 'Dipinjam')
+                                            <span class="badge bg-warning">{{$p->status}}</span>
+                                            @elseif($p->status === 'Dikembalikan')
+                                            <span class="badge bg-primary">{{$p->status}}</span>
+                                            @elseif($p->status === 'Denda')
+                                            <span class="badge bg-danger">{{$p->status}}</span>
+                                            @endif
+                                        </td>
+
                                         <td class="px-4 py-2">
                                             @if($p->status === 'Dipinjam')
                                                 <form action="{{ route('peminjaman.kembalikan', $p->id) }}" method="post">
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">Kembalikan</button>
                                                 </form>
-                                            @else
+                                            @elseif($p->status === 'Denda')
+                                            <a href="{{ route('peminjaman.denda', $p->id) }}" class="btn btn-danger">
+                                                Bayar Denda
+                                            </a>
+                                            @else ($p-> === 'Dikembalikan')
                                                 -
                                             @endif
                                         </td>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container py-4">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -17,9 +17,9 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
-                                <tr align="center">
-                                    <th class="px-4 py-2"><font color="black">Nama Kategori</font></th>
-                                    <th class="px-4 py-2"><font color="black">Aksi</font></th>
+                                <tr align="center" bgcolor="cadetblue">
+                                    <th class="px-4 py-2"><font color="white">Nama Kategori</font></th>
+                                    <th class="px-4 py-2"><font color="white">Aksi</font></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,11 +31,12 @@
                                                 @csrf
                                                 @method('DELETE')
                                             <button class = "btn btn-danger">
-                                                <i class="fas fa-fw fa-trash"></i>
+                                                <i class="ti ti-trash"></i>
                                             </button>
-                                        </form>
+                                        
                                             <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">
-                                                <i class="fa fa-pen"></i>
+                                                <i class="ti ti-pencil"></i>
+                                                  </form>
                                             </a>
                                         </td>
                                     </tr>

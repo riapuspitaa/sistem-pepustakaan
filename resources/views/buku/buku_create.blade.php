@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container py-4">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -44,8 +44,8 @@
                             </div>
 
                             <div class="mb-4">
-                                <label for="sinopsis" class="form-label">Sinopsis:</label>
-                                <input type="text" name="sinopsis" class="form-control" required>
+                                <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                <input type="text" name="deskripsi" class="form-control" required>
                             </div>
 
                             <div class="mb-4">

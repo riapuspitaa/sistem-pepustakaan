@@ -26,13 +26,14 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
+        //dd($request->all());
         $request->validate([
             'judul' => 'required',
             'foto' => 'required|mimes:jpeg,png,jpg,gifsvg|max:2048',
             'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required|integer',
-            'sinopsis' => 'required',
+            'deskripsi' => 'required',
             'kategori_id' => 'required',
         ]);
          $fotoPath = $request->file('foto')->store('buku_images', 'public');
@@ -48,11 +49,11 @@ class BukuController extends Controller
             'penulis' => $request->penulis,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,
-            'sinopsis' => $request->sinopsis,
+            'deskripsi' => $request->deskripsi,
         ]);
 
         $buku->kategori()->attach($kategori);
-
+        //dd($request->all);
         return redirect('/buku')->with('success', 'Buku berhasil ditambahkan!');
     }
 
@@ -78,12 +79,13 @@ class BukuController extends Controller
     }
     public function update(Request $request, $id)
     {
+        //dd($request->all());
         $request->validate([
             'judul' => 'required',
             'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required|integer',
-            'sinopsis' => 'required',
+            'deskripsi' => 'required',
             'kategori_id' => 'required',
         ]);
         $buku = Buku::findOrFail($id);
@@ -101,11 +103,12 @@ class BukuController extends Controller
         $buku->penulis = $request->penulis;
         $buku->penerbit = $request->penerbit;
         $buku->tahun_terbit = $request->tahun_terbit;
-        $buku->sinopsis = $request->sinopsis;
+        $buku->deskripsi = $request->deskripsi;
         $buku->save();
         // Update kategori
         $kategori = Kategori::find($request->kategori_id);
         $buku->kategori()->sync([$kategori->id]);
+        
         return redirect('/buku')->with('success', 'Buku berhasil diperbarui!');
     }
 }

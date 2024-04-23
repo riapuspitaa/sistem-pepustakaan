@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Library</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="{{ asset ('/assets/css/styles.min.css') }}" />
+</head>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

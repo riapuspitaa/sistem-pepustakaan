@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container py-5">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow-lg rounded-3">
@@ -60,8 +60,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="sinopsis" class="form-label">Sinopsis:</label>
-                                <input type="text" name="sinopsis" class="form-control" value="{{ $buku->sinopsis }}" required>
+                                <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                <input type="text" name="deskripsi" class="form-control" value="{{ $buku->deskripsi }}" required>
                             </div>
 
                             <div class="d-grid">

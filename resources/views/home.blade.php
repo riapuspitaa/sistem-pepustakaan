@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <h5 class="card-header"><font color="black">{{ __('Dashboard') }}</font></h5>
 
                 @php
                 $totalBuku = \App\Models\Buku::count();

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container py-4">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -16,14 +16,14 @@
 
                         <table class="table table-bordered">
                             <thead>
-                                <tr align="center">
-                                    <th><font color="black">Foto Buku</font></th>
-                                    <th><font color="black">Judul Buku</font></th>
-                                    <th><font color="black">Penulis</font></th>
-                                    <th><font color="black">Penerbit</font></th>
-                                    <th><font color="black">Tahun Terbit</font></th>
-                                    <th><font color="black">Sinopsis/Deskripsi</font></th>
-                                    <th><font color="black">Aksi</font></th>
+                                <tr align="center" bgcolor="cadetblue">
+                                    <th><font color="white">Foto Buku</font></th>
+                                    <th><font color="white">Judul Buku</font></th>
+                                    <th><font color="white">Penulis</font></th>
+                                    <th><font color="white">Penerbit</font></th>
+                                    <th><font color="white">Tahun Terbit</font></th>
+                                    
+                                    <th><font color="white">Aksi</font></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,17 +36,17 @@
                                         <td>{{ $b->penulis }}</td>
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
-                                        <td>{{ $b->sinopsis }}</td>
+                                        
                                         <td>
                                             <form action="{{ route ('buku.hapus', $b->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                             <button class = "btn btn-danger">
-                                            <i class="fas fa-fw fa-trash"></i>
+                                            <i class="ti ti-trash"></i>
                                             </button>
                                         </form>
                                             <a class="btn btn-primary" href="{{ route('buku.edit', $b->id) }}">
-                                            <i class="fa fa-pen"></i>
+                                            <i class="ti ti-pencil"></i>
                                             </a>
                                         </td>
                                     </tr>

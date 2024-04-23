@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-dark bg-primary">
                 <div class="container">
                     <a class="navbar-brand" href="#">
